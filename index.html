@@ -38,13 +38,26 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        .gallery div {
+        .gallery a {
             width: 200px;
             height: 150px;
             margin: 10px;
             background: #111;
             border: 2px solid #00ffcc;
             box-shadow: 0 0 10px #00ffcc;
+            display: inline-block;
+            text-decoration: none;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery a:hover img {
+            transform: scale(1.1);
         }
         
         /* Mobile Responsive Styles */
@@ -66,9 +79,16 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .gallery div {
+            .gallery a {
                 width: 90%;
                 height: auto;
+            }
+            .gallery a img {
+                width: 100%;
+                height: auto;
+            }
+            .gallery a:hover img {
+                transform: none;
             }
         }
     </style>
@@ -76,7 +96,7 @@
 <body>
     <header>
         <h1>Mohsin Habib</h1>
-        <p> Video Editor portfolio</p>
+        <p>Futuristic Video Editor</p>
     </header>
     <nav>
         <ul>
@@ -94,7 +114,15 @@
         <h2>Portfolio</h2>
         <div class="gallery">
             <!-- Video Thumbnails Will Go Here -->
-            <div></div><div></div><div></div>
+            <a href="https://www.youtube.com/watch?v=OTXTmJqhBGM&pp=ygUIYW1oYXJpYyA%3D" target="_blank">
+                <img src="thumbnail1.jpg" alt="Video 1">
+            </a>
+            <a href="https://www.youtube.com/watch?v=ZLEjCAovEkk&pp=ygUIYW1oYXJpYyA%3D" target="_blank">
+                <img src="thumbnail2.jpg" alt="Video 2">
+            </a>
+            <a href="https://www.youtube.com/watch?v=6odqBp-MKDE&pp=ygUJa2Fzc21hc3Nl" target="_blank">
+                <img src="thumbnail3.jpg" alt="Video 3">
+            </a>
         </div>
     </section>
     <section id="contact">
