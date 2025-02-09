@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohsin Habib - Video Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00ffcc;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            font-size: 2em;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        section {
+            margin: 50px 0;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .gallery div {
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+            background: #111;
+            border: 2px solid #00ffcc;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.5em;
+            }
+            nav ul {
+                padding: 0;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            nav ul li a {
+                font-size: 1em;
+            }
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+            .gallery div {
+                width: 90%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mohsin Habib</h1>
+        <p>Futuristic Video Editor</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Passionate video editor with a futuristic vision and high-tech creativity.</p>
+        <p>I have a keen eye for detail, masterful storytelling skills, and the ability to bring any footage to life with stunning effects and seamless transitions.</p>
+    </section>
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+            <!-- Video Thumbnails Will Go Here -->
+            <div></div><div></div><div></div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: Mohsinhabibmsk@gmail.com</p>
+        <p>Phone: +251 938107734</p>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
