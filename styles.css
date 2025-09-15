@@ -1,0 +1,350 @@
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #00ff00; /* Cyber green */
+    --secondary-accent: #00ffff; /* Cyan */
+    --neon-glow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+    --terminal-bg: #001100;
+    --terminal-text: #00ff00;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 1rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    text-shadow: var(--neon-glow);
+}
+
+section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: var(--neon-glow);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Home Hero */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#home .hero {
+    z-index: 2;
+}
+
+.typing {
+    font-size: 1.5rem;
+    color: var(--secondary-accent);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid var(--accent-color);
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color); }
+}
+
+/* Matrix Background */
+#matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* About */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    margin: 1rem 0;
+    box-shadow: var(--neon-glow);
+}
+
+.video-intro {
+    margin: 2rem 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Portfolio */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--terminal-bg);
+    padding: 1.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: var(--neon-glow);
+}
+
+.filters {
+    margin: 1rem 0;
+}
+
+.filters button {
+    background: none;
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.filters button:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Skills */
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    margin: 1rem 0;
+}
+
+.skill-bar {
+    background: var(--terminal-bg);
+    border: 1px solid var(--accent-color);
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-bar div {
+    background: var(--accent-color);
+    height: 100%;
+    transition: width 1s ease-in-out;
+}
+
+.certs {
+    list-style: none;
+    padding: 0;
+}
+
+.certs li {
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+/* Contact */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact input, #contact textarea {
+    background: var(--terminal-bg);
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 1rem;
+    margin: 0.5rem 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#contact button {
+    background: var(--accent-color);
+    border: none;
+    color: var(--bg-color);
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact button:hover {
+    background: var(--secondary-accent);
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.social a {
+    color: var(--text-color);
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.social a:hover {
+    color: var(--accent-color);
+    text-shadow: var(--neon-glow);
+}
+
+/* Bonus: Terminal */
+#terminal {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    height: 200px;
+    background: var(--terminal-bg);
+    border: 1px solid var(--accent-color);
+    padding: 1rem;
+    overflow-y: auto;
+    font-size: 0.8rem;
+    display: none;
+}
+
+#terminal p {
+    margin: 0.2rem 0;
+    color: var(--terminal-text);
+}
+
+/* Back to Top */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s;
+}
+
+#back-to-top:hover {
+    opacity: 0.8;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Light Mode */
+body.light {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #00aa00;
+    --secondary-accent: #00aaaa;
+    --terminal-bg: #eeeeee;
+    --terminal-text: #000000;
+    --neon-glow: none;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
