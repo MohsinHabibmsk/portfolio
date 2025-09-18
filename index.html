@@ -178,6 +178,12 @@
             max-width: 560px;
         }
 
+        .video-intro iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 10px;
+        }
+
         /* Portfolio */
         .filters {
             margin-bottom: 2rem;
@@ -218,15 +224,22 @@
             transform: translateY(-10px);
         }
 
-        .project-card img {
+        .project-card img, .project-card iframe {
             width: 100%;
             border-radius: 5px;
+            margin-bottom: 1rem;
         }
 
         .project-card a {
             color: #00ff00;
             text-decoration: none;
             font-weight: bold;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+
+        .project-card a:hover {
+            color: #ffffff;
         }
 
         /* Skills */
@@ -453,9 +466,8 @@
         <!-- Replace with your own profile image -->
         <img src="https://via.placeholder.com/150" alt="Profile Picture">
         <div class="video-intro">
-            <!-- Replace with your YouTube video ID or use a <video> tag for local video -->
-            <!-- Example: <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Introduction Video" frameborder="0" allowfullscreen></iframe> -->
-            <p>Video introduction placeholder (add your video here)</p>
+            <h3>Elevator Pitch</h3>
+            <iframe src="https://www.youtube.com/embed/jHZ700SEWTA" title="Elevator Pitch" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
@@ -466,8 +478,18 @@
             <button data-filter="tools">Tools</button>
             <button data-filter="writeups">Writeups</button>
             <button data-filter="forensics">Forensics</button>
+            <button data-filter="alx">ALX Projects</button>
         </div>
         <div class="projects">
+            <div class="project-card" data-category="alx">
+                <h3>ALX Cybersecurity Project</h3>
+                <p><strong>Objective:</strong> Developed a cybersecurity project as part of the ALX program, showcasing skills in defensive security and analysis.</p>
+                <p><strong>Tools Used:</strong> Various cybersecurity tools (specific tools to be added based on project details).</p>
+                <p><strong>Process:</strong> Collaborative project involving research, analysis, and implementation of cybersecurity measures.</p>
+                <p><strong>Outcome:</strong> Successfully demonstrated proficiency in Blue Team operations.</p>
+                <iframe src="https://www.youtube.com/embed/yxEjLw2BMzg" title="ALX Project Video" frameborder="0" allowfullscreen></iframe>
+                <a href="https://docs.google.com/presentation/d/1WpZ6mX81t5c917wt84U1HWjsjCPcX192D_kuhx1gzA4/edit?usp=sharing" target="_blank">View Presentation</a>
+            </div>
             <div class="project-card" data-category="forensics">
                 <h3>Investigating Suspicious IP</h3>
                 <p><strong>Objective:</strong> Investigate a suspicious IP address from a TryHackMe challenge.</p>
@@ -513,7 +535,6 @@
         <p>Email: mohsinhabibmsk@gmail.com</p>
         <p>Phone: +251 938 107 734</p>
         <div class="social">
-            <!-- Replace with your actual GitHub and LinkedIn URLs -->
             <a href="https://github.com/" target="_blank">GitHub</a>
             <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
             <a href="mailto:mohsinhabibmsk@gmail.com">Email</a>
@@ -595,7 +616,7 @@
             document.body.classList.toggle('light');
         });
 
-        // Portfolio Filters (Basic)
+        // Portfolio Filters
         const filterButtons = document.querySelectorAll('.filters button');
         const projectCards = document.querySelectorAll('.project-card');
 
