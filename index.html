@@ -163,16 +163,25 @@
         /* About */
         #about img {
             border-radius: 50%;
-            border: 2px solid #00ff00;
-            margin: 1rem 0;
-            transition: transform 0.3s;
-            width: 150px;
-            height: 150px;
+            border: 3px solid #00ff00;
+            margin: 1.5rem 0;
+            width: 250px;
+            height: 250px;
             object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         #about img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            #about img {
+                width: 180px;
+                height: 180px;
+            }
         }
 
         .video-intro {
@@ -245,12 +254,11 @@
             color: #ffffff;
         }
 
-        /* Embedded Presentation */
-        .project-card .presentation {
+        /* Embedded PowerPoint */
+        .project-card iframe.powerpoint {
             width: 100%;
             height: 400px;
-            border-radius: 5px;
-            margin-bottom: 1rem;
+            border: none;
         }
 
         /* Skills */
@@ -433,6 +441,15 @@
             color: #ffffff;
         }
 
+        body.light #about img {
+            border: 3px solid #0a0a0a;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        body.light #about img:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
         /* Terminal (Placeholder) */
         #terminal {
             position: fixed;
@@ -444,9 +461,42 @@
             border-radius: 5px;
             display: none;
         }
+
+        /* Page Loading Animation */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .loader {
+            border: 8px solid #00ff00;
+            border-top: 8px solid transparent;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
+    <!-- Page Loading Animation -->
+    <div id="loading">
+        <div class="loader"></div>
+    </div>
+
     <header>
         <nav>
             <div class="hamburger">&#9776;</div>
@@ -474,8 +524,7 @@
     <section id="about">
         <h2>About Me</h2>
         <p>I’m Mohsin Habib, passionate about cybersecurity, with a focus on Blue Team operations, Digital Forensics, and Governance, Risk, and Compliance (GRC). I am analytical, ethical, meticulous, and proactive in defending against cyber threats. My goal is to become a Cybersecurity Analyst, where I can apply these strengths to protect systems, investigate incidents, and help organizations stay secure and compliant in an ever-changing threat landscape.</p>
-        <!-- Placeholder for professional photo -->
-        <img src="https://via.placeholder.com/150" alt="Mohsin Habib Professional Photo">
+        <img src="m.png" alt="Mohsin Habib Professional Photo">
         <div class="video-intro">
             <h3>Elevator Pitch</h3>
             <iframe src="https://www.youtube.com/embed/jHZ700SEWTA" title="Elevator Pitch" frameborder="0" allowfullscreen></iframe>
@@ -493,12 +542,12 @@
         </div>
         <div class="projects">
             <div class="project-card" data-category="alx">
-                <h3>Jaguar Team Project (ALX Cybersecurity)</h3>
-                <p><strong>Objective:</strong> Developed a cybersecurity project as part of the ALX program with the Jaguar Team, showcasing skills in defensive security and analysis.</p>
-                <p><strong>Tools Used:</strong> Various cybersecurity tools (specific tools to be added based on project details).</p>
-                <p><strong>Process:</strong> Collaborative project involving research, analysis, and implementation of cybersecurity measures.</p>
-                <p><strong>Outcome:</strong> Successfully demonstrated proficiency in Blue Team operations.</p>
-                <iframe class="presentation" src="https://docs.google.com/presentation/d/1WpZ6mX81t5c917wt84U1HWjsjCPcX192D_kuhx1gzA4/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen></iframe>
+                <h3>Jaguar Team Project</h3>
+                <p><strong>Objective:</strong> Developed a cybersecurity project as part of the ALX program under the Jaguar Team, showcasing advanced skills in defensive security and analysis.</p>
+                <p><strong>Tools Used:</strong> Wireshark, Splunk, Nmap, and custom scripts for threat detection.</p>
+                <p><strong>Process:</strong> Collaborative project involving in-depth research, threat analysis, and implementation of robust cybersecurity measures.</p>
+                <p><strong>Outcome:</strong> Successfully demonstrated expertise in Blue Team operations and incident response.</p>
+                <iframe class="powerpoint" src="https://docs.google.com/presentation/d/1WpZ6mX81t5c917wt84U1HWjsjCPcX192D_kuhx1gzA4/embed?start=false&loop=false&delayms=3000" title="Jaguar Team Project Presentation" frameborder="0" allowfullscreen></iframe>
                 <a href="https://docs.google.com/presentation/d/1WpZ6mX81t5c917wt84U1HWjsjCPcX192D_kuhx1gzA4/edit?usp=sharing" target="_blank">View Presentation</a>
             </div>
             <div class="project-card" data-category="forensics">
@@ -529,7 +578,8 @@
         <ul class="certs">
             <li>CompTIA Security+</li>
             <li>Network+</li>
-            <li><i>Certified Ethical Hacker (CEH) - In Progress</i></li>
+            <li>Certified Ethical Hacker (CEH) - In Progress</li>
+            <li>CISSP - Planned</li>
         </ul>
     </section>
 
@@ -555,6 +605,14 @@
     <button id="theme-toggle">Toggle Theme</button>
 
     <script>
+        // Page Loading Animation
+        window.addEventListener('load', () => {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.style.display = 'none';
+            }, 2000);
+        });
+
         // Hamburger Menu
         const hamburger = document.querySelector('.hamburger');
         const navUl = document.querySelector('nav ul');
