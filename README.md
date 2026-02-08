@@ -1,9 +1,9 @@
 # Hi, I'm Mohsin Habib Osman! <br/>
-<a href="https://Mohsin.pro.et">Cybersecurity Specialist</a> | 
-<a href="https://Mohsin.pro.et">Aviation & Infrastructure Security</a> | 
+<a href="https://Mohsinhabib.pro.et">Cybersecurity Specialist</a> | 
+<a href="https://www.linkedin.com/in/YOUR_LINKEDIN">Aviation & Infrastructure Security</a> | 
 <a href="https://github.com/MohsinHabibmsk">Full-Stack Developer</a>
 
-## 🚀 Engineering & Software Projects
+## 🚀 Engineering & Software Projects:
 
 ### **1. Agribot: Autonomous Farming Assistant**
 - **Description:** Developed as a flagship university project at **AASTU**, this bot is designed for precision agriculture. It integrates hardware and software to assist in land-based farming tasks, optimizing crop management through automation.
@@ -29,18 +29,36 @@
 
 ---
 
-## 📊 Professional Background & Certifications:
+## 📜 Verified Certifications:
+
+### 🛡️ Cybersecurity & Defense
+- **ALX Cybersecurity Programme** | [Verify Certificate](https://savanna.alxafrica.com/certificates/5ZLmX3reP2)
+- **TryHackMe Advent of Cyber 2025** | [Verify Badge](https://tryhackme.com/p/mohsinhabib)
+- **Ethiopian Aviation University** | Certified **98.00 Grade** in Cyber Security Awareness
+
+### 💻 Development & Cloud
+- **AWS Community Builders** | [Verify Backend Link](https://cert.devtown.in.tech/verify/1n4aL3)
+- **Google Developer Student Clubs** | [Verify Backend Link](https://cert.devtown.in.tech/verify/ZEGErn)
+- **Microsoft Learn Student Ambassador** | [Verify Frontend Link](https://cert.devtown.in.tech/verify/Z1WgHc8)
+- **MLSA Python Master** | [Verify Certificate](https://cert.devtown.in.tech/verify/2jqCcz)
+
+### 🚀 Professional Foundations
+- **ALX Freelancer Academy** | [Verify Certificate](https://savanna.alxafrica.com/certificates/RnmPN87CEZ)
+- **ALX Professional Foundations** | [Verify Certificate](https://savanna.alxafrica.com/certificates/MXFy6pN8Cs)
+
+---
+
+## 📊 Professional Background:
 - 🎓 **AASTU:** Bachelor's Degree in Engineering (2025).
-- ✈️ **Ethiopian Aviation University:** 98.00 Grade in Cybersecurity Awareness.
 - 🏛️ **INSA:** National Security Internship focused on digital infrastructure defense.
-- 🛡️ **ALX & TryHackMe:** Certified in Defensive Operations and Ethical Hacking.
+- ✈️ **Ethiopian Aviation University:** Specialized training in Aircraft Structure Maintenance.
 
 ---
 
 ## 🤳 Connect with me:
 
 [<img align="left" alt="Mohsin Habib | GitHub" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />](https://github.com/MohsinHabibmsk)
-[<img align="left" alt="Mohsin Habib | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />](https://www.linkedin.com/in/YOUR_LINKEDIN)
+[<img align="left" alt="Mohsin Habib | LinkedIn" width="22px" src="https://www.linkedin.com/in/YOUR_LINKEDIN)
 [<img align="left" alt="Mohsin Habib | Mail" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg" />](mailto:mohsinhabibmsk@gmail.com)
 
 <br/>
